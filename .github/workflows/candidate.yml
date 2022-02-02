@@ -1,12 +1,19 @@
-name: Build and Publish Docker
+name: candidate
 
 on:
-  push:
-    branches-ignore: ["main"]
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+permissions:
+  id-token: write
+  contents: write
 
 jobs:
-  build_and_push:
+  copy_tag_and_release:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -20,18 +27,9 @@ jobs:
           CR_PAT: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
 
-      - name: Build and push and cache
-        uses: docker/build-push-action@v2
+      - name: Push Image to multiple registries
+        uses: akhilerm/tag-push-action@v2.0.0
         with:
-          context: .
-          push: true
-          tags: |
-            ghcr.io/shinofara/cicd:${{ github.sha }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new
-
-      # Cacheを保存
-      - name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+          src: ghcr.io/shinofara/cicd:${{github.event.pull_request.head.sha}}
+          dst: |
+            ghcr.io/shinofara/cicd:latest
