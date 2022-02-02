@@ -8,6 +8,11 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
+      - name: check target branch
+        if: github.event.release.target_commitish != 'main'
+        run: echo "github.event.release.target_commitish want main, got ${{github.event.release.target_commitish}}"
+        run: exit 1
+
       - name: checkout
         uses: actions/checkout@v2
 
