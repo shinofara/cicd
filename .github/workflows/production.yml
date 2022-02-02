@@ -28,3 +28,5 @@ jobs:
           src: ghcr.io/shinofara/cicd:latest
           dst: |
             ghcr.io/shinofara/cicd:${{ env.TAG }}
+
+        - run: echo "gcloud run deploy dummy --project production --image=ghcr.io/shinofara/cicd:${{ env.TAG }}"
