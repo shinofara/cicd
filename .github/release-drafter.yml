@@ -6,7 +6,7 @@ template: |
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
 categories:
   - title: 'Checked'
-    label: 'type: checked'
+    labels: ['checked']
   - title: 'No Checks'
 
 exclude-labels:
