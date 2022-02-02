@@ -1,9 +1,11 @@
 name: Release Drafter
 
 on:
-  label:
   push:
     branches: [ main ]
+  pull_request:
+    types: [ labeled ]
+
 
 jobs:
   update_release_draft:
