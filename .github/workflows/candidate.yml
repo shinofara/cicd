@@ -30,4 +30,4 @@ jobs:
           dst: |
             ghcr.io/shinofara/cicd:latest
 
-        - run: echo "gcloud run deploy dummy --project production --image=ghcr.io/shinofara/cicd:${{github.event.pull_request.head.sha}}"
+      - run: echo "gcloud run deploy dummy --project production --image=ghcr.io/shinofara/cicd:${{github.event.pull_request.head.sha}}"
