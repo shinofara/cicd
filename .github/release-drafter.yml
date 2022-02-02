@@ -18,7 +18,7 @@ categories:
   - title: 'Other changes'
   - title: 'Dependency Updates'
     label: 'type: dependencies'
-change-template: '- \[ \] $TITLE (#$NUMBER) @$AUTHOR'
+change-template: '- [ ] $TITLE (#$NUMBER) @$AUTHOR'
 version-resolver:
   major:
     labels:
