@@ -1,5 +1,30 @@
+## What
+
+this repository is ci/cd's example flow for single branch
+I will update it in the future based on different opinions and ideas.
+
 ## Deployment Flow
 
-1. An <image@hash> image is created after pushing to the feature branch.
-2. An <image@release> image is copyed from <image@hash> image after merging 1.
-3. An <image@202201012359> image is copyed from <image@release> image after publish fraft release.
+The CI/CD flow in this repository is based on github-flow.
+
+This is a brief introduction to github-flow.
+
+1. create a feature branch with main as the base.
+2. create a pull request from the feature branch to the main branch.
+3. deploy to Production as soon as it is merged into main.
+
+Ideally, the main branch should be ready to be deployed at any time.
+
+This repository is triggered by the publish of the release.
+
+1. Create <image:hash> when you push to a feature.
+2. Create <image:hash> to create <image:latest> when you push to main.
+3. The release will be created or updated when you push it to main.
+4. Deploy <image:latest> in the production environment after 3.
+5. Create <image:latest> to create <image:release-version> when you publish release.
+6. Deploy <image:release-version> in the production environment after 5.
+
+## Issue
+
+- Anyone can create a release.
+- Anyone can publish at any time.
