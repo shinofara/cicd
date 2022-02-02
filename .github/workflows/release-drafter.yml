@@ -1,6 +1,7 @@
 name: Release Drafter
 
 on:
+  label:
   push:
     branches: [ main ]
 
