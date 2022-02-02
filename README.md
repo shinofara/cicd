@@ -24,6 +24,11 @@ This repository is triggered by the publish of the release.
 5. Create <image:latest> to create <image:release-version> when you publish release.
 6. Deploy <image:release-version> in the production environment after 5.
 
+## Release Note
+
+There is a checked and not yet section in the release note.
+If the target repository has a checked label, it will appear in the checked section; if not, it will appear in the not yet section.
+
 ## Issue
 
 - Anyone can create a release.
