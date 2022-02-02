@@ -7,7 +7,7 @@ on:
     types: [closed]
 
 jobs:
-  copy_tag_and_release:
+  deployment:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:

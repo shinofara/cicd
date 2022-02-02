@@ -1,10 +1,12 @@
+name: production
+
 on:
   push:
     tags:
       - 'v*'
 
 jobs:
-  copy_tag_and_release:
+  deployment:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
