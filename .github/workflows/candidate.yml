@@ -6,10 +6,6 @@ on:
       - main
     types: [closed]
 
-permissions:
-  id-token: write
-  contents: write
-
 jobs:
   copy_tag_and_release:
     runs-on: ubuntu-latest
