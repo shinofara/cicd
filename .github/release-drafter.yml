@@ -7,7 +7,7 @@ template: |
 categories:
   - title: 'Checked'
     labels: ['checked']
-  - title: 'No Checks'
+  - title: 'Not yet'
 
 exclude-labels:
   - 'skip-changelog'
