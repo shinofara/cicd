@@ -3,5 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello")
+	fmt.Println(hoge())
+}
+
+func hoge() string {
+	return "hoge"
 }
