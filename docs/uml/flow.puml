@@ -1,0 +1,18 @@
+@startuml
+actor Developer as Dev
+actor Reviewer as Rev
+Dev->Github: Create feature branch
+Github->Github: Create a feature based on main
+Github->Dev: Pull feature branch
+Dev->Dev: Coding
+Dev->Github: Push feature branch
+Github->GithubActions: Run test and lint ant etc
+Github->Dev: ok
+Dev->Github: Create Pull Request to main
+Rev->Github: Approve
+Github->Github: Merge to main
+Github->GithubActions: Deploy to staging environment
+Github->Github: Create or Update Release Note
+Dev->Github: Publish Release Note
+Github->GithubActions: Deploy to production environment
+@enduml
