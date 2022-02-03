@@ -30,6 +30,8 @@ Testing, static analysis, etc. is only done when you push to a feature branch.
 In the past, testing would be done after the merge to ensure that the branch is not broken.
 However, by enabling "Require branches to be up to date before merging" in Protected Branch, you can ensure that the feature branch follows the base, main, when it is merged.
 
+![protected](image/protected.png)
+
 ## Issue
 
 - Anyone can create a release.

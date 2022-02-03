@@ -30,6 +30,8 @@ mainブランチはいつでもデプロイできる状態にしておくのが�
 以前は、ブランチが壊れていないことを確認するために、テストはマージの後に行われていました。
 しかし、Protected Branch で "Require branches to be up to date before merging" を有効にすると、機能ブランチをマージする際にベースである main に従うようにすることができるようになります。
 
+![protected](image/protected.png)
+
 ## 問題
 
 - 誰でもリリースを作成することができます。
