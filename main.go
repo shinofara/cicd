@@ -1,11 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	fmt.Println(hoge("'a'; Delete from user"))
+	fmt.Println(hoge("aa"))
 }
 
 func hoge(q string) string {
-	return fmt.Sprintf("select * from id = %s", q)
+	return fmt.Sprintf("select * from id = '%s'", q)
 }
