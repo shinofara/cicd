@@ -2,12 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/shinofara/cicd/hoge"
 )
 
 func main() {
-	fmt.Println(hoge())
-}
-
-func hoge() string {
-	return "hoge"
+	fmt.Println(hoge.Hoge())
 }
