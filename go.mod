@@ -1,4 +1,4 @@
-module cicd
+module github.com/shinofara/cicd
 
 go 1.17
 
