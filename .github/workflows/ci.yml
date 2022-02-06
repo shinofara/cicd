@@ -6,7 +6,7 @@ on:
 
 jobs:
   lint:
-    uses: ./.github/workflows/golangci-lint.yml
+    uses: ./.github/workflows/reusable-golangci-lint.yml
     with:
       event: feature
   test:
