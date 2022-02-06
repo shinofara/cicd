@@ -1,0 +1,22 @@
+name: Reusable golangci-lint
+
+on:
+  workflow_call:
+    inputs:
+      event:
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  golangci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.29
+          args: -c .golangci/${{ inputs.event }}.yml

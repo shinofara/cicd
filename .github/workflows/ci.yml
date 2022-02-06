@@ -6,15 +6,9 @@ on:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v2
-        with:
-          version: v1.29
-          args: --timeout 10m0s
+    uses: ./.github/workflows/reusable-golangci-lint.yml
+    with:
+      event: feature
   test:
     runs-on: ubuntu-latest
     steps:
