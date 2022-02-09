@@ -3,5 +3,7 @@ optConfig:
 
 action: issue
 enforceDefault: true
+approvalCount: 0
 requireApproval: false
+dismissStale: false
 blockForce: true
